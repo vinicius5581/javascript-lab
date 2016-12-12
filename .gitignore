@@ -1,0 +1,11 @@
+# .gitignore
+
+# Work
+# node_modules
+# rest/node_modules
+node_modules/
+
+
+# Don't work
+./rest/node_modules
+./rest/node_modules/
