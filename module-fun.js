@@ -1,3 +1,4 @@
+console.log('%cModule Fun', 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
 // Anonymous Closures
 
 (function () {
@@ -16,7 +17,7 @@ var jQuery = "Jquery lib",
 
 (function ($, YAHOO) {
   // now have access to globals jQuery (as $) and YAHOO in this code
-    console.log("Module Import");
+    console.log("%cModule Import", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
     console.log($);
     console.log(YAHOO);
 }(jQuery, YAHOO));
@@ -27,7 +28,7 @@ var jQuery = "Jquery lib",
 var a = 1;
 
 var MODULE = (function () {
-    console.log("Module Export");
+    console.log("%cModule Export", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
     var my = {},
     privateVariable = 1;
 
@@ -38,7 +39,7 @@ var MODULE = (function () {
   my.moduleProperty = 1;
   my.moduleMethod = function () {
     // ...     
-        console.log("Original my.moduleMethod")
+        console.log("%cOriginal my.moduleMethod", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
   };
 
   return my;
@@ -51,7 +52,7 @@ console.log('MODULE.moduleProperty: ' + MODULE.moduleProperty);
 // Augmentation
 
 MODULE = (function (my) {
-    console.log("Module Augmentation");
+    console.log("%cModule Augmentation", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
   my.anotherMethod = function () {
     // added method...
   };
@@ -65,7 +66,7 @@ console.log(MODULE);
 // Loose Augmentation
 
 var MODULE = (function (my) {
-    console.log('Loose Augmentation');
+    console.log('%cLoose Augmentation', 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
   // add capabilities...
     my.moduleNewProperty = 2;
 
@@ -78,13 +79,13 @@ console.log(MODULE);
 // Tight Augmentation
 
 var MODULE = (function (my) {
-    console.log("Tight Augmentation");
+    console.log("%cTight Augmentation", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
   var old_moduleMethod = my.moduleMethod;
 
     my.old =  old_moduleMethod;
   my.moduleMethod = function () {
     // method override, has access to old through old_moduleMethod...
-        console.log("New my.moduleMethod")
+        console.log("%cNew my.moduleMethod", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
   };
 
   return my;
@@ -95,7 +96,7 @@ console.log(MODULE);
 // Cloning and Inheritance
 
 var MODULE_TWO_AKA_THE_CLONE = (function (old) {
-    console.log("Cloning and Inheritance");
+    console.log("%cCloning and Inheritance", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
   var my = {},
     key;
 
@@ -121,7 +122,7 @@ console.log("MODULE_TWO_AKA_THE_CLONE", MODULE_TWO_AKA_THE_CLONE);
 // Cross-File Private State
 
 var MODULE = (function (my) {
-    console.log("Cross-File Private State");
+    console.log("%cCross-File Private State", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
   var _private = my._private = my._private || {},
     _seal = my._seal = my._seal || function () {
       delete my._private;
@@ -145,7 +146,7 @@ console.log(MODULE);
 // Sub-modules
 
 MODULE.sub = (function () {
-    console.log("Sub-modules");
+    console.log("%cSub-modules", 'background:grey; color: orange; padding: 1rem; line-height: 3rem;');
   var my = {};
   // ...
 
